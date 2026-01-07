@@ -297,7 +297,7 @@ const jsonLd = {
             }
 
             {shareConfig.enable && (
-                <div class="p-6 bg-[var(--license-block-bg)] rounded-xl mb-6 onload-animation">
+                <div id="share-component" class:list={["p-6 bg-[var(--license-block-bg)] rounded-xl mb-6 onload-animation", { "encrypted-hidden": isEncrypted }]}>
                     <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                         <div class="flex items-center gap-3 flex-1">
                             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-[var(--enter-btn-bg)]">
@@ -333,7 +333,8 @@ const jsonLd = {
             )}
 
             {licenseConfig.enable && (
-                <License
+                <div id="license-component" class:list={["encrypted-hidden-wrapper", { "encrypted-hidden": isEncrypted }]}>
+                    <License
                     title={entry.data.title}
                     id={entry.id}
                     pubDate={entry.data.published}
@@ -343,6 +344,7 @@ const jsonLd = {
                     licenseUrl={entry.data.licenseUrl}
                     class="mb-6 rounded-xl license-container onload-animation"
                 />
+                </div>
             )}
         </div>
     </div>
