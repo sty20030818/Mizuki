@@ -105,20 +105,12 @@
   }
 
   /* --- 表格样式 --- */
-  table {
-    display: block;
+  .table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     width: 100%;
-    box-sizing: border-box;
-
-    /* 外观设置 */
-    border: 1px solid var(--line-divider);
     border-radius: var(--radius-large);
-    border-spacing: 0;
-    border-collapse: separate;
     margin: 0;
-    background-color: var(--card-bg);
 
     /* --- 滚动条样式 --- */
     &::-webkit-scrollbar {
@@ -139,11 +131,19 @@
     &::-webkit-scrollbar-thumb:active {
       background: var(--scrollbar-bg-active);
     }
+  }
 
-    /* PC端使用 display: table 以对齐外边框 */
-    @media (min-width: 768px) {
-      display: table;
-    }
+  table {
+    display: table;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    margin: 0;
+    background-color: var(--card-bg);
+
+    /* 外观设置 */
+    border: 1px solid var(--line-divider);
+    border-radius: var(--radius-large);
   }
 
   th,
