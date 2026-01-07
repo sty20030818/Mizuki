@@ -16,24 +16,30 @@ export type DeviceCategory = {
 };
 
 export const devicesData: DeviceCategory = {
-	OnePlus: [
+	Phone: [
 		{
-			name: "OnePlus 13T",
+			name: "iPhone 16 Pro",
 			image: "/images/device/oneplus13t.png",
-			specs: "Gray / 16G + 1TB",
-			description:
-				"Flagship performance, Hasselblad imaging, 80W SuperVOOC.",
-			link: "https://www.oneplus.com/cn/13t",
+			specs: "White / 12G + 256GB",
+			description: "成功人士的标配",
+			link: "https://www.apple.com/",
+		},
+		{
+			name: "小米 11Pro",
+			image: "/images/device/oneplus13t.png",
+			specs: "Green / 12G + 1TB",
+			description: "小米 11Pro",
+			link: "https://www.mi.com/",
 		},
 	],
-	Router: [
+	Computer: [
 		{
-			name: "GL-MT3000",
+			name: "Mac mini M4",
 			image: "/images/device/mt3000.png",
 			specs: "1000Mbps / 2.5G",
-			description:
-				"Portable WiFi 6 router suitable for business trips and home use.",
-			link: "https://www.gl-inet.cn/products/gl-mt3000/",
+			description: "Mac mini M4",
+			link: "https://www.apple.com/",
 		},
 	],
 };
+
