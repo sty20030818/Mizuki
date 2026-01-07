@@ -40,7 +40,10 @@
 
 		// 检查是否在TOC元素上
 		const activeElement = document.activeElement;
-		if (activeElement && activeElement.closest("#toc, .table-of-contents")) {
+		if (
+			activeElement &&
+			activeElement.closest("#toc, .table-of-contents")
+		) {
 			return true;
 		}
 
@@ -205,7 +208,9 @@
 				target.closest(".tk-admin")
 			) {
 				enableScrollProtection(6000); // 管理面板操作保护更长时间
-				console.log("[强力滚动保护] 检测到 Twikoo 管理面板操作，启动长期保护");
+				console.log(
+					"[强力滚动保护] 检测到 Twikoo 管理面板操作，启动长期保护",
+				);
 			}
 
 			// 检查是否点击了遮罩层（通常用于关闭模态框）
@@ -223,7 +228,9 @@
 					(target.closest("#tcomment") || tcommentEl.contains(target))
 				) {
 					enableScrollProtection(4000);
-					console.log("[强力滚动保护] 检测到 Twikoo 遮罩层点击，启动保护");
+					console.log(
+						"[强力滚动保护] 检测到 Twikoo 遮罩层点击，启动保护",
+					);
 				}
 			}
 		},
@@ -270,7 +277,10 @@
 	// 监听 DOM 变化，检测管理面板的关闭
 	const observer = new MutationObserver((mutations) => {
 		mutations.forEach((mutation) => {
-			if (mutation.type === "childList" || mutation.type === "attributes") {
+			if (
+				mutation.type === "childList" ||
+				mutation.type === "attributes"
+			) {
 				const target = mutation.target;
 
 				// 检查是否是 Twikoo 相关的 DOM 变化

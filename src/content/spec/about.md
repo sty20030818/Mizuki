@@ -1,5 +1,5 @@
 
-本网站基于 **Astro** 框架构建，使用了 [Mizuki](https://github.com/matsuzaka-yuki/mizuki) 主题。
+<!--本网站基于 **Astro** 框架构建，使用了 [Mizuki](https://github.com/matsuzaka-yuki/mizuki) 主题。-->
 
 <div align="center">
 
@@ -32,9 +32,9 @@ $ focus
 
 ## 🔭 我正在做
 
-* 我正在打造：**stonehub**（个人网站 / 作品集）+ **模拟终端** + **AI 侧栏**
-* 我持续迭代：**stoneOS**（Web 端 OS 交互范式模拟）
-* 我记录沉淀：**stonefish.blog**（个人博客系统）
+* 我正在打造：**StoneHub**（个人网站 / 作品集）+ **模拟终端** + **AI 侧栏**
+* 我持续迭代：**StoneOS**（Web 端 OS 交互范式模拟）
+* 我记录沉淀：**Stonefish.blog**（个人博客系统）
 * 我正在开发：**StoneFlow**（Finish List）
 * 我正在开发：**StoneKit**（工具库）
 
@@ -42,9 +42,10 @@ $ focus
 
 ## 🚀 精选项目
 
-### 🧩 stonehub · Nuxt — 个人网站 / 作品集
+### 🧩 StoneHub · Nuxt — 个人网站 / 作品集
 
 > 页面包含：**首页 / 项目 / 博客 / 此刻 / 关于我**
+
 > 内置 **模拟终端** + **AI 侧栏**：把展示做成“可交互的产品体验”
 
 * `亮点:` SSR/SEO · 组件化设计 · 信息架构 · 交互细节打磨
@@ -52,7 +53,7 @@ $ focus
 
 ---
 
-### ✍️ stonefish.blog · Nuxt — 个人博客系统
+### ✍️ Stonefish.blog · Nuxt — 个人博客系统
 
 > 长期内容沉淀：结构清晰、可持续扩展、维护友好
 
@@ -61,7 +62,7 @@ $ focus
 
 ---
 
-### 🖥️ stoneOS · Nuxt — Web 端“OS”模拟系统
+### 🖥️ StoneOS · Nuxt — Web 端“OS”模拟系统
 
 > 把 **桌面 / 窗口 / 系统交互范式**搬到 Web：更沉浸、更有产品感
 
@@ -75,7 +76,8 @@ $ focus
 > 前后端一体：覆盖用户流程、数据管理、接口联调与部署落地
 
 * `亮点:` REST API 设计 · 鉴权/权限 · 业务闭环 · 可迭代架构
-::github{repo="sty20030818/StoneFlow"}
+::github{repo="sty20030818/Badminton-platform-frontend"}
+::github{repo="sty20030818/Badminton-platform-backend"}
 
 ---
 

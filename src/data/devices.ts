@@ -16,23 +16,23 @@ export type DeviceCategory = {
 };
 
 export const devicesData: DeviceCategory = {
-	Phone: [
+	手机: [
 		{
 			name: "iPhone 16 Pro",
 			image: "/images/device/oneplus13t.png",
-			specs: "White / 12G + 256GB",
+			specs: "白色 / 12G + 256GB",
 			description: "成功人士的标配",
 			link: "https://www.apple.com/",
 		},
 		{
 			name: "小米 11Pro",
 			image: "/images/device/oneplus13t.png",
-			specs: "Green / 12G + 1TB",
+			specs: "绿色 / 12G + 1TB",
 			description: "小米 11Pro",
 			link: "https://www.mi.com/",
 		},
 	],
-	Computer: [
+	电脑: [
 		{
 			name: "Mac mini M4",
 			image: "/images/device/mt3000.png",
@@ -42,4 +42,3 @@ export const devicesData: DeviceCategory = {
 		},
 	],
 };
-

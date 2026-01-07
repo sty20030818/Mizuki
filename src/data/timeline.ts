@@ -1,5 +1,5 @@
-// Timeline data configuration file
-// Used to manage data for the timeline page
+// 时间线数据配置文件
+// 用于管理时间线页面的数据
 
 export interface TimelineItem {
 	id: string;
@@ -7,7 +7,7 @@ export interface TimelineItem {
 	description: string;
 	type: "education" | "work" | "project" | "achievement";
 	startDate: string;
-	endDate?: string; // If empty, it means current
+	endDate?: string; // 如果为空，表示当前
 	location?: string;
 	organization?: string;
 	position?: string;
@@ -18,7 +18,7 @@ export interface TimelineItem {
 		url: string;
 		type: "website" | "certificate" | "project" | "other";
 	}[];
-	icon?: string; // Iconify icon name
+	icon?: string; // Iconify 图标名称
 	color?: string;
 	featured?: boolean;
 }
@@ -26,18 +26,18 @@ export interface TimelineItem {
 export const timelineData: TimelineItem[] = [
 	{
 		id: "current-study",
-		title: "Studying Computer Science and Technology",
+		title: "学习计算机科学与技术",
 		description:
-			"Currently studying Computer Science and Technology, focusing on web development and software engineering.",
+			"目前就读计算机科学与技术专业，专注于 Web 开发与软件工程。",
 		type: "education",
 		startDate: "2022-09-01",
-		location: "Beijing",
-		organization: "Beijing Institute of Technology",
+		location: "北京",
+		organization: "北京理工大学",
 		skills: ["Java", "Python", "JavaScript", "HTML/CSS", "MySQL"],
 		achievements: [
-			"Current GPA: 3.6/4.0",
-			"Completed data structures and algorithms course project",
-			"Participated in multiple course project developments",
+			"当前 GPA：3.6/4.0",
+			"完成数据结构与算法课程项目",
+			"参与多项课程项目开发",
 		],
 		icon: "material-symbols:school",
 		color: "#059669",
@@ -45,26 +45,26 @@ export const timelineData: TimelineItem[] = [
 	},
 	{
 		id: "mizuki-blog-project",
-		title: "Mizuki Personal Blog Project",
+		title: "Mizuki 个人博客项目",
 		description:
-			"A personal blog website developed using the Astro framework as a practical project for learning frontend technologies.",
+			"使用 Astro 框架开发的个人博客网站，作为前端技术学习的实践项目。",
 		type: "project",
 		startDate: "2024-06-01",
 		endDate: "2024-08-01",
 		skills: ["Astro", "TypeScript", "Tailwind CSS", "Git"],
 		achievements: [
-			"Mastered modern frontend development tech stack",
-			"Learned responsive design and user experience optimization",
-			"Completed the full process from design to deployment",
+			"掌握现代前端开发技术栈",
+			"学习响应式设计与用户体验优化",
+			"完成从设计到部署的完整流程",
 		],
 		links: [
 			{
-				name: "GitHub Repository",
+				name: "GitHub 仓库",
 				url: "https://github.com/example/mizuki-blog",
 				type: "project",
 			},
 			{
-				name: "Live Demo",
+				name: "在线演示",
 				url: "https://mizuki-demo.example.com",
 				type: "website",
 			},
@@ -75,20 +75,19 @@ export const timelineData: TimelineItem[] = [
 	},
 	{
 		id: "summer-internship-2024",
-		title: "Frontend Development Intern",
-		description:
-			"Summer internship at an internet company, participating in frontend development of web applications.",
+		title: "前端开发实习生",
+		description: "在互联网公司进行暑期实习，参与 Web 应用的前端开发。",
 		type: "work",
 		startDate: "2024-07-01",
 		endDate: "2024-08-31",
-		location: "Beijing",
-		organization: "TechStart Internet Company",
-		position: "Frontend Development Intern",
+		location: "北京",
+		organization: "TechStart 互联网公司",
+		position: "前端开发实习生",
 		skills: ["React", "JavaScript", "CSS3", "Git", "Figma"],
 		achievements: [
-			"Completed user interface component development",
-			"Learned team collaboration and code standards",
-			"Received outstanding internship performance certificate",
+			"完成用户界面组件开发",
+			"学习团队协作与代码规范",
+			"获得优秀实习表现证明",
 		],
 		icon: "material-symbols:work",
 		color: "#DC2626",
@@ -96,22 +95,21 @@ export const timelineData: TimelineItem[] = [
 	},
 	{
 		id: "web-development-course",
-		title: "Completed Web Development Online Course",
-		description:
-			"Completed a full-stack web development online course, systematically learning frontend and backend development technologies.",
+		title: "完成 Web 开发在线课程",
+		description: "完成全栈 Web 开发在线课程，系统学习前后端开发技术。",
 		type: "achievement",
 		startDate: "2024-01-15",
 		endDate: "2024-05-30",
-		organization: "Mooc Website",
+		organization: "Mooc 网站",
 		skills: ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
 		achievements: [
-			"Received course completion certificate",
-			"Completed 5 practical projects",
-			"Mastered full-stack development fundamentals",
+			"获得课程结业证书",
+			"完成 5 个实战项目",
+			"掌握全栈开发基础",
 		],
 		links: [
 			{
-				name: "Course Certificate",
+				name: "课程证书",
 				url: "https://certificates.example.com/web-dev",
 				type: "certificate",
 			},
@@ -121,94 +119,90 @@ export const timelineData: TimelineItem[] = [
 	},
 	{
 		id: "student-management-system",
-		title: "Student Management System Course Project",
-		description:
-			"Final project for the database course, developed a complete student information management system.",
+		title: "学生管理系统课程项目",
+		description: "数据库课程期末项目，开发完整的学生信息管理系统。",
 		type: "project",
 		startDate: "2023-11-01",
 		endDate: "2023-12-15",
 		skills: ["Java", "MySQL", "Swing", "JDBC"],
 		achievements: [
-			"Received excellent course project grade",
-			"Implemented complete CRUD functionality",
-			"Learned database design and optimization",
+			"获得课程项目优秀成绩",
+			"实现完整的 CRUD 功能",
+			"学习数据库设计与优化",
 		],
 		icon: "material-symbols:database",
 		color: "#EA580C",
 	},
 	{
 		id: "programming-contest",
-		title: "University Programming Contest",
-		description:
-			"Participated in a programming contest held by the university, improving algorithm and programming skills.",
+		title: "校内程序设计竞赛",
+		description: "参加校内程序设计竞赛，提升算法与编程能力。",
 		type: "achievement",
 		startDate: "2023-10-20",
-		location: "Beijing Institute of Technology",
-		organization: "School of Computer Science",
+		location: "北京理工大学",
+		organization: "计算机学院",
 		skills: ["C++", "Algorithms", "Data Structures"],
 		achievements: [
-			"Won third prize in university contest",
-			"Improved algorithmic thinking ability",
-			"Strengthened programming fundamentals",
+			"获得校内竞赛三等奖",
+			"提升算法思维能力",
+			"夯实编程基础",
 		],
 		icon: "material-symbols:emoji-events",
 		color: "#7C3AED",
 	},
 	{
 		id: "part-time-tutor",
-		title: "Part-time Programming Tutor",
-		description:
-			"Provided programming tutoring for high school students, helping them learn Python basics.",
+		title: "兼职编程辅导老师",
+		description: "为高中学生提供编程辅导，帮助学习 Python 基础。",
 		type: "work",
 		startDate: "2023-09-01",
 		endDate: "2024-01-31",
-		position: "Programming Tutor",
+		position: "编程辅导老师",
 		skills: ["Python", "Teaching", "Communication"],
 		achievements: [
-			"Helped 3 students master Python basics",
-			"Improved expression and communication skills",
-			"Gained teaching experience",
+			"帮助 3 名学生掌握 Python 基础",
+			"提升表达与沟通能力",
+			"获得教学经验",
 		],
 		icon: "material-symbols:school",
 		color: "#059669",
 	},
 	{
 		id: "high-school-graduation",
-		title: "High School Graduation",
+		title: "高中毕业",
 		description:
-			"Graduated from high school with excellent grades and was admitted to the Computer Science and Technology program at Beijing Institute of Technology.",
+			"以优异成绩高中毕业，考入北京理工大学计算机科学与技术专业。",
 		type: "education",
 		startDate: "2019-09-01",
 		endDate: "2022-06-30",
-		location: "Jinan, Shandong",
-		organization: "No.1 High School of Jinan",
+		location: "山东济南",
+		organization: "济南市第一中学",
 		achievements: [
-			"College entrance exam score: 620",
-			"Received municipal model student award",
-			"Won provincial second prize in math competition",
+			"高考成绩：620",
+			"获得市级三好学生称号",
+			"获得省级数学竞赛二等奖",
 		],
 		icon: "material-symbols:school",
 		color: "#2563EB",
 	},
 	{
 		id: "first-programming-experience",
-		title: "First Programming Experience",
-		description:
-			"First encountered programming in high school IT class, started learning Python basic syntax.",
+		title: "初次接触编程",
+		description: "在高中信息技术课首次接触编程，开始学习 Python 基础语法。",
 		type: "education",
 		startDate: "2021-03-01",
 		skills: ["Python", "Basic Programming Concepts"],
 		achievements: [
-			'Completed first "Hello World" program',
-			"Learned basic loops and conditional statements",
-			"Developed interest in programming",
+			'完成第一个 "Hello World" 程序',
+			"学习基本循环与条件语句",
+			"培养对编程的兴趣",
 		],
 		icon: "material-symbols:code",
 		color: "#7C3AED",
 	},
 ];
 
-// Get timeline statistics
+// 获取时间线统计信息
 export const getTimelineStats = () => {
 	const total = timelineData.length;
 	const byType = {
@@ -223,7 +217,7 @@ export const getTimelineStats = () => {
 	return { total, byType };
 };
 
-// Get timeline items by type
+// 按类型获取时间线项目
 export const getTimelineByType = (type?: string) => {
 	if (!type || type === "all") {
 		return timelineData.sort(
@@ -241,7 +235,7 @@ export const getTimelineByType = (type?: string) => {
 		);
 };
 
-// Get featured timeline items
+// 获取精选时间线项目
 export const getFeaturedTimeline = () => {
 	return timelineData
 		.filter((item) => item.featured)
@@ -252,12 +246,12 @@ export const getFeaturedTimeline = () => {
 		);
 };
 
-// Get current ongoing items
+// 获取当前进行中的项目
 export const getCurrentItems = () => {
 	return timelineData.filter((item) => !item.endDate);
 };
 
-// Calculate total work experience
+// 计算总工作经验
 export const getTotalWorkExperience = () => {
 	const workItems = timelineData.filter((item) => item.type === "work");
 	let totalMonths = 0;
