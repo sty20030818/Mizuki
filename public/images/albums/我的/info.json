@@ -1,0 +1,31 @@
+{
+	"mode": "external",
+	"hidden": false,
+	"title": "俺的相册",
+	"description": "这是一个 我的日常相册",
+	"date": "2026-01-01",
+	"location": "CloudFlare",
+	"tags": ["CloudFlare", "日常"],
+	"layout": "masonry",
+	"columns": 3,
+	"cover": "https://r2.stonefish.space/avatar.png",
+	"photos": [
+		{
+			"id": "external-1",
+			"src": "https://r2.stonefish.space/avatar.png",
+			"alt": "1",
+			"title": " 我的头像",
+			"description": "这是一张我的头像",
+			"tags": ["头像", "avatar"]
+		},
+		{
+			"id": "external-2",
+			"src": "https://r2.stonefish.space/round-avatar.png",
+			"alt": "1",
+			"title": " 我的头像",
+			"description": "这是一张我的圆的头像",
+			"tags": ["头像", "avatar"]
+		}
+	]
+}
+

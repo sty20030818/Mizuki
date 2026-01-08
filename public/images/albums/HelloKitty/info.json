@@ -1,0 +1,63 @@
+{
+	"mode": "external",
+	"hidden": false,
+	"title": "HelloKitty",
+	"description": "Hello Kitty",
+	"date": "2026-01-01",
+	"location": "CloudFlare",
+	"tags": ["CloudFlare", "日常", "HelloKitty"],
+	"layout": "masonry",
+	"columns": 3,
+	"cover": "https://r2.stonefish.space/HelloKitty/HelloKitty5.jpeg",
+	"photos": [
+		{
+			"id": "external-1",
+			"src": "https://r2.stonefish.space/HelloKitty/HelloKitty.jpeg",
+			"alt": "HelloKitty1",
+			"title": " HelloKitty1",
+			"description": "Hello Kitty",
+			"tags": ["HelloKitty"]
+		},
+		{
+			"id": "external-2",
+			"src": "https://r2.stonefish.space/HelloKitty/HelloKitty1.jpeg",
+			"alt": "HelloKitty2",
+			"title": " HelloKitty2",
+			"description": "Hello Kitty",
+			"tags": ["HelloKitty"]
+		},
+		{
+			"id": "external-3",
+			"src": "https://r2.stonefish.space/HelloKitty/HelloKitty2.jpeg",
+			"alt": "HelloKitty3",
+			"title": " HelloKitty3",
+			"description": "Hello Kitty",
+			"tags": ["HelloKitty"]
+		},
+		{
+			"id": "external-4",
+			"src": "https://r2.stonefish.space/HelloKitty/HelloKitty3.jpeg",
+			"alt": "HelloKitty4",
+			"title": " HelloKitty4",
+			"description": "Hello Kitty",
+			"tags": ["HelloKitty"]
+		},
+		{
+			"id": "external-5",
+			"src": "https://r2.stonefish.space/HelloKitty/HelloKitty4.jpeg",
+			"alt": "HelloKitty5",
+			"title": " HelloKitty5",
+			"description": "Hello Kitty",
+			"tags": ["HelloKitty"]
+		},
+		{
+			"id": "external-5",
+			"src": "https://r2.stonefish.space/HelloKitty/HelloKitty5.jpeg",
+			"alt": "HelloKitty5",
+			"title": " HelloKitty5",
+			"description": "Hello Kitty",
+			"tags": ["HelloKitty"]
+		}
+	]
+}
+
