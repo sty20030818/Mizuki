@@ -26,8 +26,8 @@ const diaryData: DiaryItem[] = [
 	{
 		id: 2,
 		content: "与光同尘!",
-		date: "2026-01-8T12:00:00Z",
-		images: ["/images/diary/2-1.jpg", "/images/diary/2-2.jpg"],
+		date: "2026-01-07T12:00:00Z",
+		images: ["/images/diary/2-1.jpg", "/images/diary/2-2.png"],
 	},
 ];
 

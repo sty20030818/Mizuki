@@ -22,7 +22,7 @@ description: 这是我新的 Astro 博客的第一篇文章。
 image: ./cover.jpg
 tags: [示例, 演示]
 category: 前端
-draft: false
+draft: true
 ---
 ```
 
