@@ -245,7 +245,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		// 支持自定义导航栏链接,并且支持多级菜单,3.1版本新加
 		{
-			name: "Links",
+			name: "我的链接",
 			url: "/links/",
 			icon: "material-symbols:link",
 			children: [
@@ -267,10 +267,22 @@ export const navBarConfig: NavBarConfig = {
 					external: true,
 					icon: "mdi:git",
 				},
+				{
+					name: "石头鱼的云盘",
+					url: "https://pan.sty20030818.space",
+					external: true,
+					icon: "material-symbols:cloud",
+				},
+				{
+					name: "石头鱼的备忘",
+					url: "https://note.sty20030818.space",
+					external: true,
+					icon: "material-symbols:note-stack",
+				},
 			],
 		},
 		{
-			name: "My",
+			name: "我的生活",
 			url: "/content/",
 			icon: "material-symbols:person",
 			children: [
@@ -280,53 +292,52 @@ export const navBarConfig: NavBarConfig = {
 				// 	icon: "material-symbols:movie",
 				// },
 				{
-					name: "Diary",
+					name: "俺的日记",
 					url: "/diary/",
 					icon: "material-symbols:book",
 				},
 				{
-					name: "Gallery",
+					name: "美好回忆录",
 					url: "/albums/",
 					icon: "material-symbols:photo-library",
 				},
 				{
-					name: "Devices",
+					name: "我的趁手装备",
 					url: "devices/",
 					icon: "material-symbols:devices",
-					external: false,
-				},
-				{
-					name: "Projects",
-					url: "/projects/",
-					icon: "material-symbols:work",
-				},
-				{
-					name: "Skills",
-					url: "/skills/",
-					icon: "material-symbols:psychology",
-				},
-				{
-					name: "Timeline",
-					url: "/timeline/",
-					icon: "material-symbols:timeline",
 				},
 			],
 		},
 		{
-			name: "About",
+			name: "关于我",
 			url: "/content/",
 			icon: "material-symbols:info",
 			children: [
 				{
-					name: "About",
+					name: "我是谁",
 					url: "/about/",
 					icon: "material-symbols:person",
 				},
 				{
-					name: "Friends",
-					url: "/friends/",
-					icon: "material-symbols:group",
+					name: "项目们",
+					url: "/projects/",
+					icon: "material-symbols:work",
 				},
+				{
+					name: "技能栈",
+					url: "/skills/",
+					icon: "material-symbols:psychology",
+				},
+				{
+					name: "我的曾经",
+					url: "/timeline/",
+					icon: "material-symbols:timeline",
+				},
+				// {
+				// 	name: "友链",
+				// 	url: "/friends/",
+				// 	icon: "material-symbols:group",
+				// },
 			],
 		},
 		// {
