@@ -59,7 +59,7 @@ const carouselInterval = config.carousel?.interval || 5;
 const position = config.position || "center";
 const zIndex = config.zIndex || -1;
 const opacity = config.opacity || 0.8;
-const blur = config.blur || 0;
+const blurAmount = config.blur || 0;
 const positionClass = (() => {
 	switch (position) {
 		case "top": return "object-top";
@@ -111,7 +111,7 @@ const renderGroups = [
 						alt={`${group.key} wallpaper ${index + 1}`}
 						class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}`}
 						data-carousel-item={index}
-						style={`transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blur > 0 ? `filter: blur(${blur}px);` : ''}; opacity: ${index === 0 ? 1 : 0};`}
+						style={`transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blurAmount > 0 ? `filter: blur(${blurAmount}px);` : ''}; opacity: ${index === 0 ? 1 : 0};`}
 						decoding="async"
 						loading={index === 0 ? "eager" : "lazy"} 
 					/>
@@ -120,7 +120,7 @@ const renderGroups = [
 		))
 	) : (
 		<div id="wallpaper-single-container" class="w-full h-full relative">
-			<script is:inline define:vars={{ desktopImages: imageSources.desktop, mobileImages: imageSources.mobile, positionClass, blur }}>
+			<script is:inline define:vars={{ desktopImages: imageSources.desktop, mobileImages: imageSources.mobile, positionClass, blurAmount }}>
 				(function() {
 					const getRandomImage = (images, storageKey) => {
 						if (images.length === 0) return null;
@@ -151,7 +151,7 @@ const renderGroups = [
 								src="${desktopSrc}"
 								alt="desktop wallpaper"
 								class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}"
-								style="transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blur > 0 ? `filter: blur(${blur}px);` : ''} opacity: 1;"
+								style="transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blurAmount > 0 ? `filter: blur(${blurAmount}px);` : ''} opacity: 1;"
 								decoding="async"
 								loading="eager"
 							/>
@@ -168,7 +168,7 @@ const renderGroups = [
 								src="${mobileSrc}"
 								alt="mobile wallpaper"
 								class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}"
-								style="transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blur > 0 ? `filter: blur(${blur}px);` : ''} opacity: 1;"
+								style="transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blurAmount > 0 ? `filter: blur(${blurAmount}px);` : ''} opacity: 1;"
 								decoding="async"
 								loading="eager"
 							/>

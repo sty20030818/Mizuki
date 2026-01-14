@@ -860,16 +860,11 @@ body.no-banner-mode #toc-inner-wrapper {
 /* 全屏壁纸模式下的 TOC 毛玻璃背景 - 仅在 TOC 加载完成后显示 */
 body.wallpaper-transparent #toc-inner-wrapper:has(table-of-contents[data-loaded="true"]) {
     background: var(--card-bg-transparent) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
     border-radius: var(--radius-large);
     padding: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-:root.dark body.wallpaper-transparent #toc-inner-wrapper:has(table-of-contents[data-loaded="true"]) {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 /* 桌面端 banner 模式下的主内容区域位置 */
