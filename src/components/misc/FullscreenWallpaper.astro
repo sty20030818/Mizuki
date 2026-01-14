@@ -120,46 +120,64 @@ const renderGroups = [
 		))
 	) : (
 		<div id="wallpaper-single-container" class="w-full h-full relative">
-			{Array.from({ length: Math.max(imageSources.desktop.length, imageSources.mobile.length) }).map((_, index) => (
-				<template class="wallpaper-group-template">
-					<div class="hidden lg:block w-full h-full relative" style="transform: translateZ(0);">
-						{imageSources.desktop.length > 0 && (
+			<script is:inline define:vars={{ desktopImages: imageSources.desktop, mobileImages: imageSources.mobile, positionClass, blur }}>
+				(function() {
+					const getRandomImage = (images, storageKey) => {
+						if (images.length === 0) return null;
+						if (images.length === 1) return images[0];
+						
+						const lastIndex = sessionStorage.getItem(storageKey);
+						let newIndex;
+						
+						do {
+							newIndex = Math.floor(Math.random() * images.length);
+						} while (newIndex === parseInt(lastIndex || '-1'));
+						
+						sessionStorage.setItem(storageKey, newIndex.toString());
+						return images[newIndex];
+					};
+					
+					const desktopSrc = getRandomImage(desktopImages, 'wallpaper_desktop_index');
+					const mobileSrc = getRandomImage(mobileImages, 'wallpaper_mobile_index');
+					
+					const container = document.getElementById('wallpaper-single-container');
+					
+					if (desktopSrc) {
+						const desktopDiv = document.createElement('div');
+						desktopDiv.className = 'hidden lg:block w-full h-full relative';
+						desktopDiv.style.transform = 'translateZ(0)';
+						desktopDiv.innerHTML = `
 							<img
-								src={imageSources.desktop[index] || imageSources.desktop[0]}
+								src="${desktopSrc}"
 								alt="desktop wallpaper"
-								class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}`}
-								style={`transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blur > 0 ? `filter: blur(${blur}px);` : ''}; opacity: 1;`}
+								class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}"
+								style="transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blur > 0 ? `filter: blur(${blur}px);` : ''} opacity: 1;"
 								decoding="async"
 								loading="eager"
 							/>
-						)}
-					</div>
-					<div class="block lg:hidden w-full h-full relative" style="transform: translateZ(0);">
-						{imageSources.mobile.length > 0 && (
+						`;
+						container.appendChild(desktopDiv);
+					}
+					
+					if (mobileSrc) {
+						const mobileDiv = document.createElement('div');
+						mobileDiv.className = 'block lg:hidden w-full h-full relative';
+						mobileDiv.style.transform = 'translateZ(0)';
+						mobileDiv.innerHTML = `
 							<img
-								src={imageSources.mobile[index] || imageSources.mobile[0]}
+								src="${mobileSrc}"
 								alt="mobile wallpaper"
-								class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}`}
-								style={`transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blur > 0 ? `filter: blur(${blur}px);` : ''}; opacity: 1;`}
+								class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}"
+								style="transform: translateZ(0); backface-visibility: hidden; will-change: opacity; ${blur > 0 ? `filter: blur(${blur}px);` : ''} opacity: 1;"
 								decoding="async"
 								loading="eager"
 							/>
-						)}
-					</div>
-				</template>
-			))}
+						`;
+						container.appendChild(mobileDiv);
+					}
+				})();
+			</script>
 		</div>
-		<script is:inline>
-			(function() {
-				const container = document.getElementById('wallpaper-single-container');
-				const templates = container.querySelectorAll('.wallpaper-group-template');
-				if (templates.length > 0) {
-					const randomIndex = Math.floor(Math.random() * templates.length);
-					const clone = templates[randomIndex].content.cloneNode(true);
-					container.appendChild(clone);
-				}
-			})();
-		</script>
 	)}
 </div>
 

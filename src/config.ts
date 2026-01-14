@@ -118,7 +118,7 @@ export const siteConfig: SiteConfig = {
 		position: "center", // 等同于 object-position，仅支持 'top', 'center', 'bottom'。默认为 'center'
 
 		carousel: {
-			enable: false, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
+			enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
 
 			interval: 1.5, // 轮播间隔时间（秒）
 		},
@@ -440,7 +440,7 @@ export const commentConfig: CommentConfig = {
 };
 
 export const shareConfig: ShareConfig = {
-	enable: true, // 启用分享功能。当设置为 false 时，分享组件将不会显示在文章区域，且不会加载分享组件使用的库
+	enable: true, // 启用分享功能
 };
 
 export const announcementConfig: AnnouncementConfig = {
@@ -693,3 +693,4 @@ export const umamiConfig = {
 	<script defer src="https://cloud.umami.is/script.js" data-website-id="24120a43-1e48-4613-bb80-61fd4bfab0b6"></script>
   `.trim(), // 上面填你要插入的Script,不用再去Layout中插入
 } as const;
+

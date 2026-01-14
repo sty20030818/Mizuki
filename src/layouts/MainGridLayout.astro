@@ -611,43 +611,55 @@ const transparentClass = shouldEnableTransparency
         </div>
     ) : (
         <!-- Single image mode -->
-            <div id="banner-single-container" class="relative h-full w-full">
-                {Array.from({ length: Math.max(
-                    Array.isArray(bannerImages.desktop) ? bannerImages.desktop.length : 1,
-                    Array.isArray(bannerImages.mobile) ? bannerImages.mobile.length : 1
-                ) }).map((_, index) => (
-                    <template class="banner-group-template">
-                        <!-- Mobile: use mobile-specific image with same logic as desktop -->
-                        <ImageWrapper 
-                            alt="Mobile banner image of the blog" 
-                            class:list={["block lg:hidden object-cover h-full w-full transition duration-700 opacity-100"]}
-                            src={(Array.isArray(bannerImages.mobile) ? (bannerImages.mobile[index] || bannerImages.mobile[0]) : (typeof bannerImages.mobile === 'string' ? bannerImages.mobile : '')) || (Array.isArray(bannerImages.desktop) ? (bannerImages.desktop[index] || bannerImages.desktop[0]) : (typeof bannerImages.desktop === 'string' ? bannerImages.desktop : '')) || ''} 
-                            position={siteConfig.banner.position}
-                            loading="eager"
-                        />
-                        <!-- Desktop: use desktop-specific image -->
-                        <ImageWrapper 
-                            id="banner" 
-                            alt="Desktop banner image of the blog" 
-                            class:list={["hidden lg:block object-cover h-full transition duration-700 opacity-100"]}
-                            src={(Array.isArray(bannerImages.desktop) ? (bannerImages.desktop[index] || bannerImages.desktop[0]) : (typeof bannerImages.desktop === 'string' ? bannerImages.desktop : '')) || (Array.isArray(bannerImages.mobile) ? (bannerImages.mobile[index] || bannerImages.mobile[0]) : (typeof bannerImages.mobile === 'string' ? bannerImages.mobile : '')) || ''} 
-                            position={siteConfig.banner.position}
-                            loading="eager"
-                        />
-                    </template>
-                ))}
-            </div>
-            <script is:inline>
+        <div id="banner-single-container" class="relative h-full w-full">
+            <script is:inline define:vars={{ desktopImages: bannerImages.desktop, mobileImages: bannerImages.mobile, position: siteConfig.banner.position }}>
                 (function() {
+                    const getRandomImage = (images, storageKey) => {
+                        if (Array.isArray(images)) {
+                            if (images.length === 0) return null;
+                            if (images.length === 1) return images[0];
+                            
+                            const lastIndex = sessionStorage.getItem(storageKey);
+                            let newIndex;
+                            
+                            do {
+                                newIndex = Math.floor(Math.random() * images.length);
+                            } while (newIndex === parseInt(lastIndex || '-1'));
+                            
+                            sessionStorage.setItem(storageKey, newIndex.toString());
+                            return images[newIndex];
+                        }
+                        return images || null;
+                    };
+                    
+                    const desktopSrc = getRandomImage(desktopImages, 'banner_desktop_index');
+                    const mobileSrc = getRandomImage(mobileImages, 'banner_mobile_index');
+                    
                     const container = document.getElementById('banner-single-container');
-                    const templates = container.querySelectorAll('.banner-group-template');
-                    if (templates.length > 0) {
-                        const randomIndex = Math.floor(Math.random() * templates.length);
-                        const clone = templates[randomIndex].content.cloneNode(true);
-                        container.appendChild(clone);
+                    
+                    if (mobileSrc) {
+                        const mobileImg = document.createElement('img');
+                        mobileImg.alt = 'Mobile banner image of the blog';
+                        mobileImg.className = 'block lg:hidden object-cover h-full w-full transition duration-700 opacity-100';
+                        mobileImg.src = mobileSrc;
+                        mobileImg.loading = 'eager';
+                        mobileImg.dataset.position = position;
+                        container.appendChild(mobileImg);
+                    }
+                    
+                    if (desktopSrc) {
+                        const desktopImg = document.createElement('img');
+                        desktopImg.id = 'banner';
+                        desktopImg.alt = 'Desktop banner image of the blog';
+                        desktopImg.className = 'hidden lg:block object-cover h-full w-full transition duration-700 opacity-100';
+                        desktopImg.src = desktopSrc;
+                        desktopImg.loading = 'eager';
+                        desktopImg.dataset.position = position;
+                        container.appendChild(desktopImg);
                     }
                 })();
             </script>
+        </div>
     )}
     
     <!-- Home page text overlay -->
