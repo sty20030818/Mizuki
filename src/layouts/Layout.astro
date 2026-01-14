@@ -1225,10 +1225,16 @@ function disableAnimation() {
 			}
 
 			if (bannerEnabled && toc) {
-				if (scrollTop > bannerHeight) {
-					toc.classList.remove("toc-hide");
+				const isBannerMode = document.body.classList.contains("enable-banner");
+				if (isBannerMode) {
+					if (scrollTop > bannerHeight) {
+						toc.classList.remove("toc-hide");
+					} else {
+						toc.classList.add("toc-hide");
+					}
 				} else {
-					toc.classList.add("toc-hide");
+					// In Fullscreen or None mode, always show TOC
+					toc.classList.remove("toc-hide");
 				}
 			}
 

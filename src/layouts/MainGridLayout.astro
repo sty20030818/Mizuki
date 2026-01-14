@@ -303,6 +303,7 @@ const transparentClass = shouldEnableTransparency
 		var navbar = document.getElementById('navbar');
 		var body = document.body;
 		var mainContent = document.querySelector('.absolute.w-full.z-30.pointer-events-none');
+		var tocWrapper = document.getElementById('toc-wrapper');
 		
 		// 强制重排以确保样式正确应用
 		var forceReflow = function() {
@@ -317,6 +318,14 @@ const transparentClass = shouldEnableTransparency
 				}
 				if (fullscreenWallpaper) {
 					fullscreenWallpaper.style.display = 'none';
+				}
+				// 恢复 TOC 在 banner 模式下的隐藏状态，让滚动逻辑接管
+				if (tocWrapper) {
+					const scrollTop = document.documentElement.scrollTop;
+					const bannerHeight = window.innerHeight * (BANNER_HEIGHT / 100);
+					if (scrollTop <= bannerHeight) {
+						tocWrapper.classList.add('toc-hide');
+					}
 				}
 				// 先移除body类，避免CSS冲突
 				body.classList.remove('wallpaper-transparent');
@@ -351,6 +360,10 @@ const transparentClass = shouldEnableTransparency
 				if (fullscreenWallpaper) {
 					fullscreenWallpaper.style.display = 'block';
 				}
+				// 在全屏模式下始终显示 TOC
+				if (tocWrapper) {
+					tocWrapper.classList.remove('toc-hide');
+				}
 				// 先移除body类，避免CSS冲突
 				body.classList.remove('enable-banner');
 				// 强制重排
@@ -379,6 +392,10 @@ const transparentClass = shouldEnableTransparency
 				}
 				if (fullscreenWallpaper) {
 					fullscreenWallpaper.style.display = 'none';
+				}
+				// 在无壁纸模式下也始终显示 TOC
+				if (tocWrapper) {
+					tocWrapper.classList.remove('toc-hide');
 				}
 				// 先移除body类，避免CSS冲突
 				body.classList.remove('enable-banner');
@@ -777,8 +794,8 @@ const transparentClass = shouldEnableTransparency
                 "-right-[var(--toc-width)]",
                 {"toc-hide": siteConfig.wallpaperMode.defaultMode === "banner"}]}
             >
-                <div id="toc-inner-wrapper" class="fixed top-14 w-[var(--toc-width)] h-[calc(100vh_-_20rem)] overflow-y-scroll overflow-x-hidden hide-scrollbar">
-                    <div id="toc" class="w-full h-full transition-swup-fade">
+                <div id="toc-inner-wrapper" class="fixed top-14 w-[var(--toc-width)] max-h-[calc(100vh_-_10rem)] overflow-hidden">
+                    <div id="toc-container" class="w-full transition-swup-fade">
                         <TOC headings={headings}></TOC>
                     </div>
                 </div>
@@ -788,7 +805,7 @@ const transparentClass = shouldEnableTransparency
 )}
 
 <!-- 保留此元素以确保Swup正常工作 -->
-{(!siteConfig.toc.enable || isFloatTOC) && <div id="toc" class="hidden"></div>}
+{(!siteConfig.toc.enable || isFloatTOC) && <div id="toc-container" class="hidden"></div>}
 </Layout>
 
 <style>
@@ -820,6 +837,27 @@ const transparentClass = shouldEnableTransparency
 /* 当没有 banner 时，主内容区域移到顶部 */
 body.no-banner-mode .absolute.w-full.z-30 {
     top: 5.5rem !important;
+}
+
+/* TOC 垂直对齐优化 */
+body.no-banner-mode #toc-inner-wrapper {
+    top: 5.5rem !important;
+    max-height: calc(100vh - 8rem) !important;
+}
+
+/* 全屏壁纸模式下的 TOC 毛玻璃背景 - 仅在 TOC 加载完成后显示 */
+body.wallpaper-transparent #toc-inner-wrapper:has(table-of-contents[data-loaded="true"]) {
+    background: var(--card-bg-transparent) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: var(--radius-large);
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+:root.dark body.wallpaper-transparent #toc-inner-wrapper:has(table-of-contents[data-loaded="true"]) {
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* 桌面端 banner 模式下的主内容区域位置 */
