@@ -94,7 +94,28 @@ export const en: Translation = {
 	[Key.backToHome]: "Back to Home",
 
 	// Music Player
-	[Key.playlist]: "Playlist",
+	[Key.musicPlayer]: "Music Player",
+	[Key.musicPlayerShow]: "Show Music Player",
+	[Key.musicPlayerHide]: "Hide Player",
+	[Key.musicPlayerExpand]: "Expand Music Player",
+	[Key.musicPlayerCollapse]: "Collapse Player",
+	[Key.musicPlayerPause]: "Pause",
+	[Key.musicPlayerPlay]: "Play",
+	[Key.musicPlayerPrevious]: "Previous",
+	[Key.musicPlayerNext]: "Next",
+	[Key.musicPlayerShuffle]: "Shuffle",
+	[Key.musicPlayerRepeat]: "Repeat",
+	[Key.musicPlayerRepeatOne]: "Repeat One",
+	[Key.musicPlayerVolume]: "Volume Control",
+	[Key.musicPlayerProgress]: "Playback Progress",
+	[Key.musicPlayerCover]: "Cover",
+	[Key.musicPlayerPlaylist]: "Playlist",
+	[Key.musicPlayerLoading]: "Loading...",
+	[Key.musicPlayerErrorPlaylist]: "Failed to fetch playlist",
+	[Key.musicPlayerErrorSong]: "Failed to load current song, trying next",
+	[Key.musicPlayerErrorEmpty]: "No available songs in playlist",
+	[Key.unknownSong]: "Unknown Song",
+	[Key.unknownArtist]: "Unknown Artist",
 
 	// Albums Page
 	[Key.albums]: "Albums",
@@ -311,4 +332,10 @@ export const en: Translation = {
 	[Key.shareOnSocial]: "Share",
 	[Key.shareOnSocialDescription]:
 		"If this article helped you, please share it with others!",
+
+	// Profile Stats
+	[Key.profileStatsLoading]: "Loading stats...",
+	[Key.profileStatsPageViews]: "Page views",
+	[Key.profileStatsVisits]: "Visits",
+	[Key.profileStatsUnavailable]: "Stats unavailable",
 };
