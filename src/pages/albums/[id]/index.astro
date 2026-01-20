@@ -106,6 +106,7 @@ if (!album) {
                 alt={photo.alt}
                 class="photo-image w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
                 loading="lazy"
+                onload="this.removeAttribute('loading')"
               />
             </a>
           </figure>

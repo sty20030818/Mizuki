@@ -11,7 +11,7 @@ export const ja: Translation = {
 	// ナビゲーションバータイトル
 	[Key.navLinks]: "リンク",
 	[Key.navMy]: "私の",
-	[Key.navAbout]: "About",
+	[Key.navAbout]: "について",
 	[Key.navOthers]: "その他",
 
 	[Key.tags]: "タグ",
@@ -58,7 +58,6 @@ export const ja: Translation = {
 	[Key.license]: "ライセンス",
 	[Key.anime]: "アニメ",
 	[Key.diary]: "日記",
-	[Key.gallery]: "ギャラリー",
 
 	// デバイスページ
 	[Key.devices]: "私のデバイス",
