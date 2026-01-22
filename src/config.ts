@@ -22,7 +22,7 @@ import { LinkPreset } from "./types/config";
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
-	title: "这是 sty 啦",
+	title: "石头鱼的技术札记",
 	subtitle: "欢迎",
 	siteURL: "https://www.sty20030818.space", // 请替换为你的站点URL，以斜杠结尾
 	siteStartDate: "2025-08-18", // 站点开始运行日期，用于站点统计组件计算运行天数
@@ -53,11 +53,11 @@ export const siteConfig: SiteConfig = {
 		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
 		mode: "logo",
 		// 顶栏标题文本
-		text: "这是 sty 啦",
+		text: "石头鱼的技术札记",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
 		icon: "assets/home/home.png",
 		// 网站Logo图片路径
-		logo: "assets/home/default-logo.png",
+		logo: "assets/home/home.png",
 	},
 
 	// 页面自动缩放配置
@@ -150,7 +150,7 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "这是 sty 啦", // 主页横幅主标题
+			title: "石头鱼的技术札记", // 主页横幅主标题
 
 			subtitle: [
 				"一个小小的 喜欢 UI/UX 的全栈工程师",
@@ -399,16 +399,16 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:github",
 			url: "https://github.com/sty20030818",
 		},
-		{
-			name: "Codeberg",
-			icon: "simple-icons:codeberg",
-			url: "https://codeberg.org",
-		},
-		{
-			name: "Discord",
-			icon: "fa6-brands:discord",
-			url: "https://discord.gg",
-		},
+		// {
+		// 	name: "Codeberg",
+		// 	icon: "simple-icons:codeberg",
+		// 	url: "https://codeberg.org",
+		// },
+		// {
+		// 	name: "Discord",
+		// 	icon: "fa6-brands:discord",
+		// 	url: "https://discord.gg",
+		// },
 	],
 };
 
@@ -489,7 +489,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 export const footerConfig: FooterConfig = {
 	enable: true, // 是否启用Footer HTML注入功能
 	customHtml:
-		"<p>备案号：<a href='https://beian.miit.gov.cn/'>浙ICP备2023036258号</a></p>", // HTML格式的自定义页脚信息，例如备案号等，默认留空
+		"<p>备案号：<a href='https://beian.miit.gov.cn/'>浙ICP备2023036258号-2</a></p>", // HTML格式的自定义页脚信息，例如备案号等，默认留空
 	// 也可以直接编辑 FooterConfig.html 文件来添加备案号等自定义内容
 	// 注意：若 customHtml 不为空，则使用 customHtml 中的内容；若 customHtml 留空，则使用 FooterConfig.html 文件中的内容
 	// FooterConfig.html 可能会在未来的某个版本弃用
