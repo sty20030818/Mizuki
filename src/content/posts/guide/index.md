@@ -54,6 +54,6 @@ draft: false
 src/content/posts/
 ├── post-1.md
 └── post-2/
-    ├── cover.png
+    ├── cover.webp
     └── index.md
 ```

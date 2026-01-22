@@ -83,6 +83,12 @@ export type SiteConfig = {
 		logo?: string; // 网站Logo图片路径
 	};
 
+	// 页面自动缩放配置
+	pageScaling?: {
+		enable: boolean; // 是否开启自动缩放
+		targetWidth?: number; // 目标宽度，低于此宽度时开始缩放
+	};
+
 	// 添加字体配置
 	font: {
 		asciiFont: {
@@ -367,8 +373,8 @@ export type SidebarLayoutConfig = {
 			desktop: number; // 桌面端断点（px）
 		};
 		layout: {
-			mobile: "hidden" | "bottom" | "drawer" | "sidebar"; // 移动端布局模式
-			tablet: "sidebar" | "bottom" | "drawer"; // 平板端布局模式
+			mobile: "hidden" | "sidebar"; // 移动端布局模式
+			tablet: "hidden" | "sidebar"; // 平板端布局模式
 			desktop: "sidebar"; // 桌面端布局模式
 		};
 	};
@@ -451,4 +457,3 @@ export type PioConfig = {
 export type ShareConfig = {
 	enable: boolean; // 是否启用分享功能
 };
-

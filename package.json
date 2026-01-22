@@ -1,7 +1,7 @@
 {
 	"name": "mizuki",
 	"type": "module",
-	"version": "7.6.5",
+	"version": "8.0.1",
 	"scripts": {
 		"sync-content": "node scripts/sync-content.js",
 		"init-content": "node scripts/init-content-repo.js",
@@ -52,7 +52,6 @@
 		"katex": "^0.16.25",
 		"markdown-it": "^14.1.0",
 		"marked": "^16.4.2",
-		"mdast-util-to-string": "^4.0.0",
 		"node-html-parser": "^7.0.1",
 		"overlayscrollbars": "^2.13.0",
 		"pagefind": "^1.4.0",
