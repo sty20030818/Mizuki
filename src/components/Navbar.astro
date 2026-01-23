@@ -85,7 +85,7 @@ let links: NavBarLink[] = navBarConfig.links.map(
             </div>
             <LightDarkSwitch client:only="svelte"></LightDarkSwitch>
             <button aria-label="Menu" name="Nav Menu" class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90 md:!hidden" id="nav-menu-switch">
-                <Icon name="material-symbols:menu-rounded" class="text-[1.25rem]"></Icon>
+                <Icon name="material-symbols:unfold-more" class="text-[1.25rem]"></Icon>
             </button>
         </div>
         <NavMenuPanel links={links}></NavMenuPanel>
@@ -100,7 +100,9 @@ let links: NavBarLink[] = navBarConfig.links.map(
 	if (searchContainer && navbarLinksContainer) {
 		// 鼠标移入/触摸开始时隐藏导航链接
 		const hideLinks = () => {
-			navbarLinksContainer.style.opacity = "0";
+			if (window.matchMedia("(min-width: 1280px)").matches && window.matchMedia("(hover: hover)").matches) {
+				navbarLinksContainer.style.opacity = "0";
+			}
 		};
 
 		// 鼠标移出/触摸结束时显示导航链接
@@ -110,10 +112,6 @@ let links: NavBarLink[] = navBarConfig.links.map(
 
 		searchContainer.addEventListener("mouseenter", hideLinks);
 		searchContainer.addEventListener("mouseleave", showLinks);
-		
-		// 移动端/触摸屏支持
-		searchContainer.addEventListener("touchstart", hideLinks, { passive: true });
-		searchContainer.addEventListener("touchend", showLinks);
 	}
 
 async function loadButtonScript() {
