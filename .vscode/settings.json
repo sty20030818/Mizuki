@@ -14,5 +14,6 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"liveServer.settings.root": "/dist",
-	"frontMatter.dashboard.openOnStart": false
+	"frontMatter.dashboard.openOnStart": false,
+	"autoCommitAssistant.autoSetupOnStartup": false
 }
