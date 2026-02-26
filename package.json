@@ -1,7 +1,7 @@
 {
 	"name": "mizuki",
 	"type": "module",
-	"version": "8.2",
+	"version": "8.3",
 	"scripts": {
 		"sync-content": "node scripts/sync-content.js",
 		"init-content": "node scripts/init-content-repo.js",
@@ -30,7 +30,6 @@
 		"@astrojs/rss": "^4.0.15",
 		"@astrojs/sitemap": "^3.7.0",
 		"@astrojs/svelte": "7.2.5",
-		"@astrojs/tailwind": "^6.0.2",
 		"@expressive-code/core": "^0.41.6",
 		"@expressive-code/plugin-collapsible-sections": "^0.41.6",
 		"@expressive-code/plugin-line-numbers": "^0.41.6",
@@ -45,6 +44,7 @@
 		"@iconify/svelte": "^4.2.0",
 		"@swup/astro": "^1.7.0",
 		"@tailwindcss/typography": "^0.5.19",
+		"@tailwindcss/vite": "^4.2.0",
 		"astro": "5.17.1",
 		"astro-expressive-code": "^0.41.6",
 		"astro-icon": "^1.1.5",
@@ -56,6 +56,7 @@
 		"markdown-it": "^14.1.0",
 		"marked": "^16.4.2",
 		"node-html-parser": "^7.0.2",
+		"oddmisc": "^1.1.4",
 		"overlayscrollbars": "^2.14.0",
 		"pagefind": "^1.4.0",
 		"photoswipe": "^5.4.4",
@@ -75,7 +76,7 @@
 		"sharp": "^0.34.5",
 		"stylus": "^0.64.0",
 		"svelte": "^5.46.1",
-		"tailwindcss": "^3.4.19",
+		"tailwindcss": "^4.2.0",
 		"typescript": "^5.9.3",
 		"unist-util-visit": "^5.0.0"
 	},
